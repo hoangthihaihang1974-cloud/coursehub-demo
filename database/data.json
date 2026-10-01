@@ -1,0 +1,91 @@
+{
+  "students": [
+    {
+      "id": "22000001",
+      "name": "Nguyen Minh Anh",
+      "major": "KHDL"
+    },
+    {
+      "id": "22000002",
+      "name": "Tran Duc Long",
+      "major": "KHDL"
+    },
+    {
+      "id": "22000003",
+      "name": "Le Hoang Nam",
+      "major": "CNTT"
+    },
+    {
+      "id": "22000004",
+      "name": "Pham Ha My",
+      "major": "HTTT"
+    },
+    {
+      "id": "22000005",
+      "name": "Vu Quoc Khanh",
+      "major": "KHMT"
+    }
+  ],
+  "courses": [
+    {
+      "code": "INT2204",
+      "name": "Co so du lieu Web va he thong thong tin",
+      "capacity": 3,
+      "enrolled": 2
+    },
+    {
+      "code": "INT2205",
+      "name": "Khai pha du lieu lon",
+      "capacity": 2,
+      "enrolled": 2
+    },
+    {
+      "code": "INT2206",
+      "name": "Lap trinh Huong doi tuong",
+      "capacity": 4,
+      "enrolled": 1
+    },
+    {
+      "code": "INT2207",
+      "name": "Lap trinh cho Khoa hoc du lieu",
+      "capacity": 3,
+      "enrolled": 2
+    },
+    {
+      "code": "MAT1101",
+      "name": "Dai so tuyen tinh",
+      "capacity": 5,
+      "enrolled": 0
+    }
+  ],
+  "enrollments": [
+    {
+      "student_id": "22000001",
+      "course_code": "INT2204"
+    },
+    {
+      "student_id": "22000002",
+      "course_code": "INT2204"
+    },
+    {
+      "student_id": "22000003",
+      "course_code": "INT2205"
+    },
+    {
+      "student_id": "22000004",
+      "course_code": "INT2205"
+    },
+    {
+      "student_id": "22000003",
+      "course_code": "INT3105"
+    },
+    {
+      "student_id": "22000005",
+      "course_code": "INT3306"
+    },
+    {
+      "student_id": "22000001",
+      "course_code": "INT3306"
+    }
+  ]
+}

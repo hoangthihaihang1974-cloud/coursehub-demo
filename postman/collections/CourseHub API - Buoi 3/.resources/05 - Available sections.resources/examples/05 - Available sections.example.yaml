@@ -1,0 +1,41 @@
+$kind: http-example
+request:
+  url: "{{base_url}}/sections?available_only=true"
+  method: GET
+  queryParams:
+    available_only: "true"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    date: Sun, 11 Oct 2026 16:50:11 GMT
+    server: uvicorn
+    content-length: "258"
+    content-type: application/json
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "class_id": "PY-01",
+          "course_code": "INT2206",
+          "capacity": 2,
+          "enrolled": 1,
+          "remaining": 1
+        },
+        {
+          "class_id": "WEB-01",
+          "course_code": "INT2204",
+          "capacity": 3,
+          "enrolled": 2,
+          "remaining": 1
+        },
+        {
+          "class_id": "WEB-02",
+          "course_code": "INT2204",
+          "capacity": 2,
+          "enrolled": 0,
+          "remaining": 2
+        }
+      ]
+order: 1000

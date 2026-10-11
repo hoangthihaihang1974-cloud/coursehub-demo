@@ -1,0 +1,5 @@
+$kind: http-request
+url: ""
+method: GET
+examples: .resources/02 - List courses.resources/examples
+order: 2000

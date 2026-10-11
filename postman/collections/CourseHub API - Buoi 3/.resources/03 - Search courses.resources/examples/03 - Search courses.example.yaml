@@ -1,0 +1,25 @@
+$kind: http-example
+request:
+  url: "{{base_url}}/courses?q=web"
+  method: GET
+  queryParams:
+    q: web
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    date: Sun, 11 Oct 2026 16:49:20 GMT
+    server: uvicorn
+    content-length: "81"
+    content-type: application/json
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "code": "INT2204",
+          "name": "Co so du lieu Web va he thong thong tin",
+          "credits": 3
+        }
+      ]
+order: 1000

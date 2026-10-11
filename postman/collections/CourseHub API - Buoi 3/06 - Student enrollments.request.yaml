@@ -1,0 +1,5 @@
+$kind: http-request
+url: ""
+method: GET
+examples: .resources/06 - Student enrollments.resources/examples
+order: 6000

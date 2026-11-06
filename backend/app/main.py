@@ -9,6 +9,8 @@ from sqlalchemy.exc import SQLAlchemyError
 from .database import engine
 from .schemas import EnrollmentCreate
 
+from sqlalchemy.exc import IntegrityError, SQLAlchemyError
+
 logger = logging.getLogger(__name__)
 
 app = FastAPI(

@@ -1,0 +1,21 @@
+$kind: http-example
+name: 01 - Health
+request:
+  url: "{{base_url}}/health"
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    date: Fri, 06 Nov 2026 07:16:10 GMT
+    server: uvicorn
+    content-length: "38"
+    content-type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "status": "ok",
+        "database": "connected"
+      }
+order: 2000

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="850" viewBox="0 0 1280 850">
+<rect width="1280" height="850" fill="#f2f5fa"/>
+<g fill="white" stroke="#9dacbd" stroke-width="2">
+<rect x="35" y="35" width="1210" height="110" rx="12"/>
+<rect x="35" y="165" width="1210" height="120" rx="12"/>
+<rect x="35" y="305" width="780" height="300" rx="12"/>
+<rect x="835" y="305" width="410" height="300" rx="12"/>
+<rect x="35" y="625" width="1210" height="170" rx="12"/>
+</g><g font-family="sans-serif" fill="#17283d">
+<text x="60" y="85" font-size="32">CourseHub — Bản phác Buổi 5</text>
+<text x="60" y="120" font-size="18">Tra cứu, đăng ký và hủy đăng ký lớp học phần</text>
+<text x="60" y="200" font-size="22">1. Chọn sinh viên</text>
+<text x="60" y="245" font-size="18">Mã sinh viên [22000004]   [Xem đăng ký]   [Tải lại dữ liệu]</text>
+<text x="60" y="345" font-size="22">2. Danh sách lớp</text>
+<text x="60" y="385" font-size="18">[Tìm lớp]   [Học phần]   [Chỉ hiện lớp còn chỗ]</text>
+<text x="60" y="440" font-size="18">Lớp             Sức chứa     Đã đăng ký     Còn chỗ     Thao tác</text>
+<text x="60" y="485" font-size="18">WEB-01           3                   2                   1          [Đăng ký]</text>
+<text x="60" y="530" font-size="18">RACE-01          1                   1                   0          [Hết chỗ]</text>
+<text x="860" y="345" font-size="22">3. Lớp đã đăng ký</text>
+<text x="860" y="400" font-size="18">WEB-01    [Hủy đăng ký]</text>
+<text x="860" y="460" font-size="16">Thành công → đọc lại dữ liệu</text>
+<text x="860" y="495" font-size="16">409 → thông báo + cập nhật số chỗ</text>
+<text x="60" y="665" font-size="22">4. Lịch sử đăng ký (mở rộng)</text>
+<text x="60" y="710" font-size="18">[Loại sự kiện]   Mã lớp / Sự kiện / Thời gian</text>
+<text x="60" y="755" font-size="18">[Trang trước]   Trang 1   [Trang sau] — 10 dòng/trang từ API</text>
+<text x="35" y="830" font-size="16">Bản phác SVG, không phải bản thiết kế Figma. Ở 390px: xếp các vùng thành một cột.</text>
+</g></svg>

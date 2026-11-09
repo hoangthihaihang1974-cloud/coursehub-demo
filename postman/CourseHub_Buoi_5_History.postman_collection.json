@@ -1,0 +1,86 @@
+{
+  "info": {
+    "name": "CourseHub Buoi 5 - Demo history",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "History",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/enrollment-events?student_id=22000004&limit=10&skip=0"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Expected 200\", () => pm.response.to.have.status(200));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cancelled",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/enrollment-events?student_id=22000004&event_type=CANCELLED"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Expected 200\", () => pm.response.to.have.status(200));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Unknown",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/enrollment-events?student_id=99999999"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Expected 404\", () => pm.response.to.have.status(404));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Invalid limit",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/enrollment-events?student_id=22000004&limit=101"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Expected 422\", () => pm.response.to.have.status(422));"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

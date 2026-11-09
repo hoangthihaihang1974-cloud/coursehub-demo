@@ -107,6 +107,6 @@ hay tạo minh chứng review thay thành viên.
 API lịch sử CourseHub là ví dụ phân trang, không được tính thay nghiệp vụ nhóm.
 
 ## Bàn giao Git
-Nhánh codex/week05-frontend-react xuất phát từ week04-transaction-index.
+Nhánh week05-frontend-react xuất phát từ week04-transaction-index.
 Không stage .env/.env.local, node_modules, dist, dữ liệu tạm hoặc chỉnh sửa
 Postman/VS Code không liên quan. Chưa merge; cần thành viên khác review.

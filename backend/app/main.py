@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+from typing import Literal
 
 from fastapi import FastAPI, HTTPException, Query, Response, status
 from sqlalchemy import text
@@ -9,12 +10,22 @@ from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 from .database import engine
 from .schemas import EnrollmentCreate
 
+from fastapi.middleware.cors import CORSMiddleware
+
 logger = logging.getLogger(__name__)
 
 app = FastAPI(
     title="CourseHub API",
     version="0.4.0",
     description="API thuc hanh Buoi 4 - transaction, locking va hieu nang",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_credentials=False,
+    allow_methods=["GET", "POST", "DELETE"],
+    allow_headers=["Content-Type"],
 )
 
 @app.get("/")
@@ -138,6 +149,37 @@ def list_student_enrollments(student_id: str) -> list[dict[str, object]]:
         ).mappings().all()
 
     return [dict(row) for row in rows]
+
+@app.get("/enrollment-events")
+def list_enrollment_events(
+    student_id: str = Query(min_length=8, max_length=8, pattern=r"^\d{8}$"),
+    event_type: Literal["CREATED", "CANCELLED"] | None = None,
+    skip: int = Query(default=0, ge=0),
+    limit: int = Query(default=10, ge=1, le=100),
+) -> list[dict[str, object]]:
+    """Demo history only; stable database pagination, never performance events."""
+    sql = """
+        SELECT id, student_id, class_section_id, event_type, occurred_at
+        FROM enrollment_events
+        WHERE dataset = 'demo' AND student_id = :student_id
+    """
+    parameters: dict[str, object] = {
+        "student_id": student_id, "skip": skip, "limit": limit,
+    }
+    if event_type is not None:
+        sql += " AND event_type = :event_type"
+        parameters["event_type"] = event_type
+    sql += " ORDER BY occurred_at DESC, id DESC LIMIT :limit OFFSET :skip"
+    with engine.connect() as connection:
+        student = connection.execute(
+            text("SELECT id FROM students WHERE id = :student_id"),
+            {"student_id": student_id},
+        ).first()
+        if student is None:
+            raise HTTPException(status_code=404, detail="Khong tim thay sinh vien")
+        rows = connection.execute(text(sql), parameters).mappings().all()
+    return [dict(row) for row in rows]
+
 
 @app.post(
     "/enrollments",

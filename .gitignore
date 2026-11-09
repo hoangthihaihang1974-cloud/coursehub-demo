@@ -2,3 +2,9 @@ __pycache__/
 *.pyc
 .venv/
 .env
+.env.local
+node_modules/
+dist/
+test-results/
+playwright-report/
+.tmp_pdf_read/
